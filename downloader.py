@@ -32,7 +32,6 @@ def downloader(url):
         if r.status_code == 200:
             print("status code 200")
             with open(os.path.join(path, str(uuid.uuid4()) + '.jpg'), 'wb') as f:
-                f.raw.decode_content = True
                 shutil.copyfileobj(r.raw, f)
     except Exception:
         print("status code not 200")
